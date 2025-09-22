@@ -1,0 +1,19 @@
+<ListaTareasScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        
+        ScrollView:
+            GridLayout:
+                id: lista
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 5
+                
+        Button:
+            text: 'Volver'
+            size_hint_y: None
+            height: 50
+            on_press: root.manager.current = 'menu'

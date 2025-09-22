@@ -1,0 +1,13 @@
+<ThemeButton>:
+    background_normal: ''
+    background_color: app.theme_manager.get_theme_colors()["primary"]
+    color: 1, 1, 1, 1
+    font_size: '20sp'
+    bold: True
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [30]

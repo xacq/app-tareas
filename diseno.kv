@@ -1,0 +1,32 @@
+<GestorTareasUI>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(10)
+        spacing: dp(10)
+        
+        TextInput:
+            id: titulo
+            hint_text: 'Título'
+            size_hint_y: None
+            height: dp(50)
+            
+        TextInput:
+            id: descripcion
+            hint_text: 'Descripción'
+            size_hint_y: None
+            height: dp(50)
+            
+        Button:
+            text: 'Agregar'
+            size_hint_y: None
+            height: dp(50)
+            on_press: root.agregar_tarea(self)
+            
+        ScrollView:
+            Label:
+                id: lista
+                text: ''
+                markup: True
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
