@@ -53,7 +53,6 @@ android.ndk_api = 21
 # SDK path configuration
 android.sdk_path = ~/Android/Sdk
 android.ndk_path = ~/Android/Sdk/ndk/25.2.9519653
-p4a.source_dir = /home/xavicq/gestor-tareas/.buildozer/android/platform/python-for-android
 android.archs = arm64-v8a, armeabi-v7a
 
 # Configuración de compilación
