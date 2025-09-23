@@ -30,12 +30,8 @@ version = 1.0.0
 
 # Requerimientos (todos los paquetes necesarios para la app)
 requirements = python3,
-    cython==3.0.0,
-    setuptools,
-    wheel,
-    kivy==2.3.0,
-    pillow,
-    sqlite3,
+    cython==0.29.33,
+    kivy==2.2.1,
     pytz
 
 p4a.branch = develop
