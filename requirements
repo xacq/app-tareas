@@ -1,0 +1,6 @@
+requirements = python3,
+    cython==0.29.33,
+    kivy==2.2.1,
+    pillow,
+    sqlite3,
+    pytz

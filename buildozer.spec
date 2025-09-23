@@ -27,6 +27,7 @@ version = 1.0.0
 # version.regex = __version__ = ['"](.*)['"]
 # version.filename = %(source.dir)s/main.py
 
+
 # Requerimientos (todos los paquetes necesarios para la app)
 requirements = python3,
     kivy==2.2.1,
@@ -51,8 +52,8 @@ android.ndk = 25b
 android.ndk_api = 21
 
 # SDK path configuration
-android.sdk_path = ~/Android/Sdk
-android.ndk_path = ~/Android/Sdk/ndk/25.2.9519653
+android.sdk_path = /home/xavicq/Android/Sdk
+android.ndk_path = /home/xavicq/Android/Sdk/ndk/25.2.9519653
 android.archs = arm64-v8a, armeabi-v7a
 
 # Configuración de compilación
@@ -62,10 +63,10 @@ android.debug_artifact = apk
 
 # Iconos y branding
 android.presplash_color = #FFFFFF
-android.icon.filename = %(source.dir)s/resources/icon.png
-android.presplash.filename = %(source.dir)s/resources/presplash.png
-android.adaptive_icon.background.filename = %(source.dir)s/resources/icon_background.png
-android.adaptive_icon.foreground.filename = %(source.dir)s/resources/icon_foreground.png
+#android.icon.filename = %(source.dir)s/resources/icon.png
+#android.presplash.filename = %(source.dir)s/resources/presplash.png
+#android.adaptive_icon.background.filename = %(source.dir)s/resources/icon_background.png
+#android.adaptive_icon.foreground.filename = %(source.dir)s/resources/icon_foreground.png
 
 # Optimizaciones
 android.enable_androidx = True
@@ -74,6 +75,7 @@ android.add_packaging_options = doNotStrip "*/*/libsqlite3.so"
 
 # Configuración de buildozer
 [buildozer]
+build_dir = /home/xavicq/.buildozer
 log_level = 2
 warn_on_root = 1
 
