@@ -56,9 +56,9 @@ android.minapi = 21
 android.ndk = 25b
 android.ndk_api = 21
 
-# SDK path configuration
-android.sdk_path = /home/xavicq/Android/Sdk
-android.ndk_path = /home/xavicq/Android/Sdk/ndk/25.2.9519653
+# SDK path configuration (Buildozer descargará o detectará el SDK/NDK automáticamente)
+#android.sdk_path = /home/xavicq/Android/Sdk
+#android.ndk_path = /home/xavicq/Android/Sdk/ndk/25.2.9519653
 android.archs = arm64-v8a, armeabi-v7a
 
 # Configuración de compilación

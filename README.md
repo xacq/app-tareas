@@ -96,8 +96,17 @@ sudo apt install -y python3-dev build-essential libssl-dev libffi-dev libltdl-de
 pip install buildozer
 ```
 
-3. Compilar APK:
+3. Preparar el entorno de Android:
+   - Buildozer descargará automáticamente el SDK y el NDK en la carpeta `.buildozer/android` la primera vez que ejecutes un comando de compilación.
+   - Si ya tienes una instalación existente, exporta las variables de entorno antes de compilar para que Buildozer las detecte:
+     ```bash
+     export ANDROIDSDK_HOME="/ruta/a/Android/Sdk"
+     export ANDROIDNDK_HOME="$ANDROIDSDK_HOME/ndk/25.2.9519653"
+     ```
+
+4. Limpiar y compilar el APK:
 ```bash
+buildozer android clean
 buildozer android debug
 ```
 
