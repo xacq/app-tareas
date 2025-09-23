@@ -37,11 +37,9 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-3. Instalar dependencias:
+3. Instalar dependencias (misma pila que se usa para compilar con Buildozer):
 ```bash
-pip install kivy==2.2.1
-pip install pillow
-pip install pytz
+pip install "cython==0.29.33" "kivy==2.2.1" "pytz"
 ```
 
 ## Ejecución
@@ -95,6 +93,8 @@ sudo apt install -y python3-dev build-essential libssl-dev libffi-dev libltdl-de
 ```bash
 pip install buildozer
 ```
+
+> **Nota:** Buildozer usa las dependencias definidas en `buildozer.spec`, por lo que el APK se compila con `cython==0.29.33`, `kivy==2.2.1` y `pytz`, la misma pila que se instala para desarrollo.
 
 3. Compilar APK:
 ```bash
