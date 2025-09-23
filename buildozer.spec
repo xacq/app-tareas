@@ -38,7 +38,7 @@ requirements = python3,
     sqlite3,
     pytz
 
-p4a.branch = develop
+# p4a.branch = develop
 
 # Orientación (portrait para móviles)
 orientation = portrait
