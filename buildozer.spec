@@ -34,7 +34,7 @@ requirements = python3,
     kivy==2.2.1,
     pytz
 
-p4a.branch = develop
+# p4a.branch = develop
 
 # Orientación (portrait para móviles)
 orientation = portrait
