@@ -158,8 +158,6 @@ pip install buildozer
 
 Distribuido bajo la Licencia MIT. Ver `LICENSE` para más información.
 
-## Contacto
-
-Xavier Carrera - [@xacq](https://github.com/xacq)
+## Link
 
 Link del Proyecto: [https://github.com/xacq/app-tareas](https://github.com/xacq/app-tareas)
