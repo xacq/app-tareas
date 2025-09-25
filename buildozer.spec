@@ -30,9 +30,11 @@ version = 1.0.0
 
 # Requerimientos (todos los paquetes necesarios para la app)
 requirements = python3,
-    cython==0.29.33,
+    cython==0.29.36,
     kivy==2.2.1,
-    pytz
+    pytz,
+    sqlite3,
+    openssl
 
 # p4a.branch = develop
 
@@ -47,8 +49,8 @@ android.permissions = INTERNET,WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE
 
 # Configuración de Android
 # Android SDK configuration
-android.api = 30
-android.minapi = 21
+android.api = 33
+android.minapi = 24
 android.ndk = 25b
 android.ndk_api = 21
 

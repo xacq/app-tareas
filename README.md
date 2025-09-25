@@ -39,7 +39,7 @@ source venv/bin/activate
 
 3. Instalar dependencias (misma pila que se usa para compilar con Buildozer):
 ```bash
-pip install "cython==0.29.33" "kivy==2.2.1" "pytz"
+pip install "cython==0.29.36" "kivy==2.2.1" "pytz"
 ```
 
 ## Ejecución
@@ -75,46 +75,52 @@ app-tareas/
 
 ### Requisitos
 
-- Linux/WSL
-- Java Development Kit (JDK)
-- Android SDK
-- Buildozer
+- Distribución Linux (Ubuntu 22.04+ o WSL2 sobre Windows)
+- Python 3.10 con pip
+- Java Development Kit (JDK 17 recomendado)
+- Buildozer 1.5+
 
 ### Pasos para compilar
 
-1. Instalar dependencias (en Ubuntu/WSL):
+1. Instalar dependencias del sistema (en Ubuntu/WSL):
 ```bash
 sudo apt update
 sudo apt install -y python3 python3-pip git wget unzip openjdk-17-jdk
 sudo apt install -y python3-dev build-essential libssl-dev libffi-dev libltdl-dev libtool pkg-config zlib1g-dev cmake
 ```
 
-2. Instalar Buildozer:
+2. Instalar Buildozer y crear un entorno limpio para la compilación (opcional pero recomendado):
 ```bash
+python3 -m venv .buildozer-venv
+source .buildozer-venv/bin/activate
+pip install --upgrade pip
 pip install buildozer
 ```
 
-
 3. Preparar el entorno de Android:
-   - Buildozer descargará automáticamente el SDK y el NDK en la carpeta `.buildozer/android` la primera vez que ejecutes un comando de compilación.
-   - Si ya tienes una instalación existente, exporta las variables de entorno antes de compilar para que Buildozer las detecte:
+   - La primera ejecución de Buildozer descargará el Android SDK (API 33), el NDK 25b y demás herramientas dentro de la carpeta `.buildozer/android`.
+   - Si ya cuentas con el SDK/NDK instalados, exporta estas variables para reutilizarlos:
      ```bash
      export ANDROIDSDK_HOME="/ruta/a/Android/Sdk"
      export ANDROIDNDK_HOME="$ANDROIDSDK_HOME/ndk/25.2.9519653"
      ```
 
-4. Limpiar y compilar el APK:
-=======
-> **Nota:** Buildozer usa las dependencias definidas en `buildozer.spec`, por lo que el APK se compila con `cython==0.29.33`, `kivy==2.2.1` y `pytz`, la misma pila que se instala para desarrollo.
+4. Compilar el APK de depuración:
 
-3. Compilar APK:
+   ```bash
+   buildozer android clean   # opcional para iniciar desde cero
+   buildozer android debug
+   ```
 
-```bash
-buildozer android clean
-buildozer android debug
-```
+   El archivo APK resultante quedará en `bin/gestortareas-1.0.0-debug.apk`.
 
-El archivo APK se generará en la carpeta `bin/`.
+5. Instalar el APK en un dispositivo o emulador conectado:
+
+   ```bash
+   adb install -r bin/gestortareas-1.0.0-debug.apk
+   ```
+
+> **Nota:** El archivo `buildozer.spec` ya incluye las dependencias `sqlite3` y `openssl`, necesarias para que la base de datos y las conexiones HTTPS funcionen correctamente en Android.
 
 ## Uso
 
